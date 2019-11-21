@@ -1,0 +1,247 @@
+// All Variables ======
+// Colors
+$colorMain : #2896F0;
+$colorOptional: #16a085;
+$colorWhite : #fff;
+$colorBlack : #222;
+
+// Fonts
+$font1 : sans-serif;
+
+// Font size
+$fsNormal : 14px;
+$fsSmall : 16px;
+$fsMedium : 20px;
+$fsH1 : 42px;
+$fsH2 : 36px;
+$fsH3 : 30px;
+$fsH4 : 26px;
+$fsH5 : 22px;
+$fsH6 : 18px; 
+
+// All Mixins ======
+// prefix
+@mixin prefix($property, $val) {
+    -webkit-#{$property}: $val;
+    -moz-#{$property}: $val;
+    -ms-#{$property}: $val;
+    #{$property}: $val;
+}
+
+// animation
+@mixin animate(){
+    @include prefix(transition, all .4s ease);
+}
+
+// animation property
+@mixin animateIt($animateProperty){
+    @include prefix($animateProperty, all .4s ease);
+}
+
+/* ==== Normalize start ==== */
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    border: 0px;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    color: $colorMain;
+    display: inline-block;
+    @include animate();
+}
+a:hover, a:focus{
+    color: $colorOptional;
+    text-decoration: none;
+}
+p {
+    font-size: $fsNormal;
+    line-height: 24px;
+}
+/* ==== Normalize ends ==== */
+
+
+/* ==== Reusable style start ==== */
+.animate{
+    @include animate();
+}
+.box{
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px #b1b1b1;
+    margin: 15px 0;
+    @include animate();
+    border-radius: 5px;
+    &:hover{
+        margin: 10px 0px 20px;
+    }
+}
+
+
+/* ==== header start ==== */
+header{
+    background-color: $colorMain;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111;
+    .logo {
+        height: 75px;
+        img{
+            max-height: 100%;
+            width: auto;
+            max-width: auto;
+        }
+    }    
+    .navbar{
+        padding: 0;
+        .navbar-nav{
+            .nav-link{
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+        }
+    }  
+}
+
+
+/* ==== section start ==== */
+.banner{
+    height: 100vh;
+    background-image: url('../img/image4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    min-height: 380px;
+    &::after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+    .bannerText{
+        max-width: 700px;
+        color: $colorWhite;
+        h1{
+            margin-bottom: 30px;
+        }
+        a{
+            border: 1px solid $colorMain;
+            padding: 10px 25px;
+            border-radius: 3px;
+            color: $colorWhite;
+            text-transform: capitalize;
+            position: relative;
+            background-color: $colorMain;
+            font-weight: 500;
+            &::after{
+                position: absolute;
+                content: '\f105';
+                top: 12px;
+                right: -10px;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 16px;
+                -webkit-transition: all 0.4s ease;
+                -moz-transition: all 0.4s ease;
+                -ms-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+                opacity: 0;
+            }
+            &:hover{
+                padding: 10px 35px 10px 15px;
+                &::after{
+                    right: 15px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+/* ==== demos start ==== */
+.demos{    
+    padding: 100px 0;
+    .preview{
+        overflow: hidden;
+        height: 170px;
+        position: relative;
+        border: 1px solid #e9e9e9;
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .viewDemo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include prefix(transform, translate(-50%, -50%));
+            opacity: 0;
+            @include animate();
+            a{
+                padding: 5px 15px;
+                background-color: $colorMain;
+                color: $colorWhite;
+                border-radius: 3px;
+                font-weight: 600;
+                border: 1px solid rgba(0, 0, 0, 0.185);
+                &:hover{
+                    color: $colorMain;
+                    background-color: $colorWhite;
+                }
+            }
+        }
+        &:hover{
+            .viewDemo{
+                opacity: 1;
+            }
+        }
+    }
+    h4{
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+/* ==== footer start ==== */
+footer{
+    background-color: lighten($colorBlack, 15%);
+    padding: 15px 0;
+    p{
+        color: #fff;
+        margin: 0;
+    }
+}
+
+
+/* ==== Responsive CSS ==== */
+@import 'responsive.scss';
+
+
+/* ==== CSS comment start ==== */
+
+/* ==== CSS comment ends ==== */
