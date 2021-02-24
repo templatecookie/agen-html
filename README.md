@@ -4,6 +4,6 @@
 
 This project is a bootstrap version [WDZ Business Templates](https://www.echotemplate.com/templates/wdz-one-page-business-html-template) designed with HTML & CSS.
 
-Check the [Live Demo here](https://demo.echotemplate.com/appkite-app-landing-html-template).
+Check the [Live Demo here](https://demo.echotemplate.com/wdz-one-page-business-html-template/).
 
 ![](img/screenshot.png)
