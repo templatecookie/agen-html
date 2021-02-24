@@ -1,67 +1,24 @@
-/*
-    Template Name: WDZ Bootstrap Business Template
-    Author: ZakirBD
-    Author URL: zakirhossen.com
-    Version: 1.0.0
-    Tags: wdz, corporate, one page, template, html5, css3, bootstrap, landing page
-    Description: WDZ is a responsive, clean, eyecatching html5 template for corporate holders. It has some nice & cool features, like one page, responsive, clean, bootstrap 4, scss used etc.
-    
-    === Table of contents ===
-    1.0 header part
-    2.0 banner part
-    3.0 about part
-    4.0 service part
-    5.0 counter part
-    6.0 team part
-    7.0 portfolio part
-    8.0 testimonial part
-    9.0 price part
-    10.0 newsletter part
-    11.0 blog part 
-    12.0 sub footer part
-    13.0 footer part
-    
-    14.0 blog page
-        14.1    blog sidebar part
-        14.2    blog posts part
-    15.0 blog post page
-        15.0    blog post part
-        15.1    author part
-        15.2    comment form part
-        15.3    comment box part
-    16.0 responsive css
-        16.1    Laptop Device
-        16.2    Tablet Device
-        16.3    Mobile Device
-        16.4    Mobile Device Large
-        16.5    All small devices
-
-
-
-*/
-
-
 // All Variables ======
 // Colors
-// $colorMain : #5f27cd;
-$colorMain: #2196F3;
-$colorOptional: #2196F3;
-$colorWhite: #fff;
-$colorBlack: #282C34;
-$bgLightGray: #F6F9FC;
+$colorMain : #2896F0;
+$colorOptional: #16a085;
+$colorWhite : #fff;
+$colorBlack : #222;
+
 // Fonts
-$font1: sans-serif;
-$font2: serif;
+$font1 : sans-serif;
+
 // Font size
-$fsNormal: 14px;
-$fsSmall: 16px;
-$fsMedium: 20px;
-$fsH1: 45px;
-$fsH2: 36px;
-$fsH3: 30px;
-$fsH4: 26px;
-$fsH5: 22px;
-$fsH6: 18px;
+$fsNormal : 14px;
+$fsSmall : 16px;
+$fsMedium : 20px;
+$fsH1 : 42px;
+$fsH2 : 36px;
+$fsH3 : 30px;
+$fsH4 : 26px;
+$fsH5 : 22px;
+$fsH6 : 18px; 
+
 // All Mixins ======
 // prefix
 @mixin prefix($property, $val) {
@@ -72,38 +29,17 @@ $fsH6: 18px;
 }
 
 // animation
-@mixin animate() {
+@mixin animate(){
     @include prefix(transition, all .4s ease);
 }
 
 // animation property
-@mixin animateIt($animateProperty) {
+@mixin animateIt($animateProperty){
     @include prefix($animateProperty, all .4s ease);
 }
 
-//Overlay
-@mixin posOverlay($value) {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, $value);
-}
-
-// Box shadow
-@mixin boxShadow() {
-    @include prefix(box-shadow, 0px 0px 15px 0px rgba(0, 0, 0, 0.06));
-    @include animate();
-    &:hover {
-        @include prefix(box-shadow, 0px 5px 15px 0px rgba(0, 0, 0, 0.1));
-    }
-}
-
-/* ==== Normalize ==== */
-
-* {
+/* ==== Normalize start ==== */
+*{
     padding: 0;
     margin: 0;
     outline: 0;
@@ -131,155 +67,113 @@ a {
     display: inline-block;
     @include animate();
 }
-
-a:focus,
-a:hover {
+a:hover, a:focus{
+    color: $colorOptional;
     text-decoration: none;
-    color: darken($colorMain, 10%);
 }
-
 p {
     font-size: $fsNormal;
     line-height: 24px;
 }
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-h1 {
-    font-size: $fsH1;
-}
-
-h2 {
-    font-size: $fsH2;
-}
-
-h3 {
-    font-size: $fsH3;
-}
-
-h4 {
-    font-size: $fsH4;
-}
-
-h5 {
-    font-size: $fsH5;
-}
-
-h6 {
-    font-size: $fsH6;
-}
-
 /* ==== Normalize ends ==== */
 
-/* ==== Reusable style ==== */
 
-.animate {
+/* ==== Reusable style start ==== */
+.animate{
     @include animate();
 }
-
-section {
-    padding: 80px 0px 80px;
-}
-
-.color {
-    color: $colorMain;
-}
-
-.bgLightGray {
-    background-color: $bgLightGray;
-}
-
-// Header
-.header {
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    h2 {
-        margin: 0;
-        color: lighten($colorBlack, 10%);
+.box{
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px #b1b1b1;
+    margin: 15px 0;
+    @include animate();
+    border-radius: 5px;
+    &:hover{
+        margin: 10px 0px 20px;
     }
-    p {
-        color: lighten($colorBlack, 15%);
-    }
-    &.borderRight,
-    &.borderLeft {
-        padding-right: 15px;
-        border-right: 5px solid $colorMain;
-        position: relative;
-        &::after {
-            position: absolute;
-            content: '';
-            top: 50%;
-            right: 0px;
-            transform: translateY(-50%);
-            border-top: 7px solid transparent;
-            border-right: 7px solid $colorMain;
-            border-bottom: 7px solid transparent;
+}
+
+
+/* ==== header start ==== */
+header{
+    background-color: $colorMain;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111;
+    .logo {
+        height: 75px;
+        img{
+            max-height: 100%;
+            width: auto;
+            max-width: auto;
         }
-    }
-    &.borderLeft {
+    }    
+    .navbar{
         padding: 0;
-        padding-left: 15px;
-        border-left: 5px solid $colorMain;
-        border-right-color: transparent;
-        &::after {
-            border-left: 7px solid $colorMain;
-            border-right-color: transparent;
-            left: 0;
-        }
-    }
-}
-
-// buttons
-.buttons {
-    margin: 20px 0px;
-    a {
-        padding: 10px 25px;
-        margin-right: 15px;
-        border: 1px solid $colorWhite;
-        background-color: $colorMain;
-        text-transform: uppercase;
-        border-color: $colorMain;
-        color: $colorWhite;
-        font-weight: 500;
-        border-radius: 3px;
-        &:hover {
-            color: $colorMain;
-            background-color: $colorWhite;
-            border-color: $colorWhite;
-            &:last-child {
-                color: $colorWhite;
-                background-color: $colorMain;
-                border-color: $colorMain;
+        .navbar-nav{
+            .nav-link{
+                text-transform: capitalize;
+                font-weight: 600;
             }
         }
-        &:last-child {
-            margin-right: 0;
-            background-color: $colorWhite;
-            color: $colorMain;
-            border-color: $colorBlack;
-        }
+    }  
+}
+
+
+/* ==== section start ==== */
+.banner{
+    height: 100vh;
+    background-image: url('../img/image4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    min-height: 380px;
+    &::after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
     }
-    &.buttonIcon {
-        a {
+    .bannerText{
+        max-width: 700px;
+        color: $colorWhite;
+        h1{
+            margin-bottom: 30px;
+        }
+        a{
+            border: 1px solid $colorMain;
+            padding: 10px 25px;
+            border-radius: 3px;
+            color: $colorWhite;
+            text-transform: capitalize;
             position: relative;
-            &::after {
+            background-color: $colorMain;
+            font-weight: 500;
+            &::after{
                 position: absolute;
                 content: '\f105';
-                top: 10px;
+                top: 12px;
                 right: -10px;
                 font-family: "Font Awesome 5 Free";
                 font-weight: 900;
                 font-size: 16px;
-                @include animate();
+                -webkit-transition: all 0.4s ease;
+                -moz-transition: all 0.4s ease;
+                -ms-transition: all 0.4s ease;
+                transition: all 0.4s ease;
                 opacity: 0;
             }
-            &:hover {
+            &:hover{
                 padding: 10px 35px 10px 15px;
-                &::after {
+                &::after{
                     right: 15px;
                     opacity: 1;
                 }
@@ -288,1227 +182,66 @@ section {
     }
 }
 
-// Box
-.box {
-    padding: 20px 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-    @include prefix(box-shadow, 0px 0px 15px 0px rgba(0, 0, 0, 0.09));
-    @include animate();
-    &:hover {
-        @include prefix(box-shadow, 0 5px 20px 0 rgba(0, 0, 0, 0.15));
-        margin-top: 8px;
-        margin-bottom: 22px;
-    }
-}
 
-// Background light gray;
-.bgLightGray {
-    .box {
-        @include prefix(box-shadow, 0px 0px 15px 0px rgba(0, 0, 0, 0.04));
-        &:hover {
-            @include prefix(box-shadow, 0 5px 20px 0 rgba(0, 0, 0, 0.09));
-        }
-    }
-}
-
-// Blog Post 
-.blogBox {
-    padding: 0;
-    min-height: 370px;
-    .blogImg {
-        height: 180px;
+/* ==== demos start ==== */
+.demos{    
+    padding: 100px 0;
+    .preview{
         overflow: hidden;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-    .blogCnt {
-        padding: 30px 20px 20px;
-        .category {
-            margin-bottom: 10px;
-            a {
-                padding: 0 5px;
-                &:first-child {
-                    padding-left: 0;
-                }
-            }
-        }
-        .header {
-            text-transform: unset;
-            margin: 0;
-            h5 {
-                a {
-                    color: $colorBlack;
-                }
-            }
-        }
-    }
-}
-
-// Social menu
-.social {
-    li {
-        display: inline-block;
-        a {
-            height: 40px;
-            width: 40px;
-            line-height: 40px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-size: 23px;
-            color: transparent;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: $colorWhite;
-            &:hover {
-                color: $colorWhite;
-                border-color: $colorMain;
-                background-color: $colorMain;
-                -webkit-text-stroke-color: transparent;
-            }
-        }
-    }
-}
-
-.social.black {
-    a {
-        -webkit-text-stroke-color: lighten($colorBlack, 50%); // &:hover{
-    }
-}
-// Widget Box
-.widgetBox{
-    margin-bottom: 30px;
-    &:hover{
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
-    h4{
-        margin: 0px 0 20px 0;
-        background-color: $colorMain;
-        padding: 3px 10px 5px;
-        color: $colorWhite;
-    }
-    img{
-        margin-bottom: 10px;
-    }
-    h5{
-        color: $colorMain;
-    }
-    p{
-        font-size: 16px;
-        color: lighten($colorBlack, 15%);
-    }
-    .social{
-        margin-bottom: 0;
-        li{
-            a{
-                background-color: $colorMain;
-                color: $colorWhite;
-                -webkit-text-stroke-color: transparent;
-                border-color: transparent;
-                &:hover{
-                    box-shadow: 0px 3px 20px 1px rgba(0,0,0, 0.2); 
-                    color: $colorBlack;
-                }
-            }
-        }
-    }
-    ul.categoryList{
-        margin-bottom: 0;
-        li{
-            position: relative;
-            &::after{
-                position: absolute;
-                content: '\f105';
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                top: 6px;
-                left: 8px;
-                color: lighten($colorBlack, 30%);
-                @include animate();
-            }
-            &:first-child{
-                a{
-                    border-top: 1px solid #ddd;
-                }
-            }
-            a{
-                border-bottom: 1px solid #ddd;
-                display: block;
-                padding: 5px 0;
-                padding-left: 25px;
-                color: lighten($colorBlack, 20%);
-            }                    
-            &:hover{
-                &::after{
-                    left: 13px;
-                }
-                &>a{
-                    color: $colorMain;
-                }
-            }
-            a.active{
-                color: $colorMain;
-            }
-            &.dropdown{
-                &>a,{
-                    position: relative;
-                    &:after{
-                        position: absolute;
-                        content: '+';
-                        right: 10px;
-                        top: 3px;
-                        font-weight: bold;
-                    }
-                }
-                ul.dropdownCate{
-                    display: none;
-                    padding-left: 20px;
-                    li{
-                        a{
-                            &:first-child{
-                                border-top: 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-// margin 0
-.margin0 {
-    margin: 0;
-}
-
-.padding0 {
-    padding: 0;
-}
-
-// Slider Arorws
-.mainBanner {
-    position: relative;
-    .bannerArrowsLeft {
-        left: 20px;
-    }
-    .bannerArrowsRight {
-        right: 20px;
-    }
-    .bannerArrowsLeft,
-    .bannerArrowsRight {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        i {
-            color: $colorWhite;
-            font-size: 20px;
-            height: 40px;
-            width: 40px;
-            line-height: 40px;
-            text-align: center;
-            border: 1px solid transparent;
-            background-color: $colorMain;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-    }
-}
-
-.sliderArrows{
-    .sliderArrowsLeft,
-    .sliderArrowsRight {
-        display: inline-block !important;
-        margin: 10px;
-        i {
-            color: $colorWhite;
-            font-size: 20px;
-            height: 40px;
-            width: 40px;
-            line-height: 40px;
-            text-align: center;
-            border: 1px solid transparent;
-            background-color: $colorMain;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-    }
-}
-
-
-// Bullet List
-ul.listBullet{
-    padding-left: 25px;
-    li{
-        list-style-type: disc
-    }
-}
-        
-.paginationBox{
-    margin-top: 10px;
-    .pagination{
-        .page-item{
-            .page-link{
-                color: $colorMain;
-            }
-        }
-    }
-}        
-
-
-/* ==== header part  ==== */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 11;
-    @include animate(); 
-    .navbar-dark .navbar-toggler {
-        border-color: rgba(255,255,255,.8);
-    }
-    .logo {
-        width: 150px;
-        height: 75px;
-        padding: 10px 0px;
-        box-sizing: border-box;  
-        @include animate();
-        img {
-            max-height: 100%;
-            width: auto;
-        }
-    }
-    .navbar {
-        padding: 0;
-        .navbar-nav {
-            li.nav-item {
-                a.nav-link {
-                    padding: 10px 15px;
-                    text-transform: uppercase;
-                    color: rgba($colorWhite, 0.8);
-                    font-weight: 500;
-                    font-size: 14px;
-                    &:hover {
-                        color: $colorWhite;
-                    }
-                    &.active {
-                        color: $colorWhite;
-                    }
-                }
-            }
-        }
-    }
-    &.sticky{       
-        background-color: $colorMain;
-        position: fixed !important;
-        .navbar-brand{
-            .logo{  
-                padding: 0;
-                height: 55px;
-            }
-        }
-    }
-}
-
-
-/* ==== banner part ==== */
-.banner {
-    .bnr {
-        position: relative;
-        overflow: hidden;
-        height: 100vh;
-        min-height: 380px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        &::after {
-            @include posOverlay(0.7);
-        }
-        &.slide1{
-            background-image: url('../img/banner.jpg');
-        }
-        &.slide2{
-            background-image: url('../img/banner2.jpg');
-        }
-        &.slide3{
-            background-image: url('../img/banner4.jpg');
-        }
-        .bnrInside {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            color: $colorWhite;
-            .bnrInsideBox {
-                height: 100vh;
-                width: 100%;
-                .bnrInsideText {
-                    h2 {
-                        font-size: $fsH1;
-                        margin-bottom: 20px;
-                    }
-                    p {
-                        font-size: 18px;
-                        color: darken($colorWhite, 10%);
-                    }
-                    .buttons {
-                        margin-top: 30px;
-                    }
-                    &.text-center {
-                        max-width: 700px;
-                    }
-                }
-            }
-        }
-        #particles-js {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }  
-    }
-}
-
-/* ==== about part  ==== */
-.about {
-    padding: 90px 0;
-    .aboutLeft {
-        width: 100%;
-        color: #fff;             
-        clip-path: polygon(100% 0, 100% 89%, 0 100%, 0 0);
-        &.aboutVideo{
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-        }
-    }    
-    .aboutRight {
-        height: 100%;
-        .buttons {
-            margin-top: 30px;
-            a {
-                border-color: $colorMain;
-                &:hover {
-                    &:first-child {
-                        background-color: $colorBlack;
-                        color: $colorWhite;
-                        border-color: $colorBlack;
-                    }
-                }
-            }
-        }
-        p,
-        div {
-            font-size: 15px;
-            color: lighten($colorBlack, 30%);
-        }
-    }
-}
-
-
-/* ==== service part ==== */
-.service {
-    padding-bottom: 75px;
-    .serviceBox {
-        background-color: $colorWhite;
-        h5 {
-            color: lighten($colorBlack, 30%);
-        }
-        i {
-            font-size: 50px;
-            color: transparent;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: lighten($colorMain, 30%);
-            margin-bottom: 20px;
-        }
-        p {
-            margin-bottom: 0;
-            color: lighten($colorBlack, 35%);
-        }
-        &:hover {
-            h5 {
-                color: lighten($colorMain, 10%);
-            }
-        }
-    }
-}
-
-
-/* ==== counter part ==== */
-.counter {
-    background-color: lighten($colorMain, 10%);
-    .counterBox {
-        text-align: center;
         height: 170px;
-        width: 200px;
-        border-radius: 5px;
-        background-color: lighten($colorMain, 15%);
-        h4 {
-            font-size: $fsH1;
-            font-weight: bolder;
-            margin: 0;
-            color: $colorWhite;
-        }
-        p {
-            font-size: 16px;
-            color: rgba($colorWhite, 0.8);
-            text-transform: capitalize;
-        }
-    }
-}
-
-/* ==== Team part ==== */
-.team {
-    padding-bottom: 75px;
-    .teamBox {
-        display: inline-block;
-        .memberImg {
-            max-height: 300px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        h5 {
-            margin-bottom: 0;
-            color: lighten($colorBlack, 10%);
-        }
-        p {
-            margin-bottom: 0;
-            color: lighten($colorBlack, 15%);
-        }
-        .social {
-            margin-top: 10px;
-            margin-bottom: 0;
-        }
-    }
-}
-
-
-/* ==== portfolio part ==== */
-.portfolio {
-    padding-bottom: 75px;
-    .portfolioBox {
-        .portImg {
-            height: 180px;
-            overflow: hidden;
-        }
-        .portBoxCnt {
-            h6 {
-                margin: 10px 0;
-                color: lighten($colorBlack, 15%);
-            }
-            .portLinks {
-                a {
-                    width: 50%;
-                    text-align: center;
-                    border: 1px solid #ddd;
-                    color: lighten($colorBlack, 30%);
-                    padding: 3px 0px;
-                    text-transform: capitalize;
-                    &:first-child {
-                        border-top-left-radius: 5px;
-                        border-bottom-left-radius: 5px;
-                        margin-right: 5px;
-                    }
-                    &:last-child {
-                        border-top-right-radius: 5px;
-                        border-bottom-right-radius: 5px;
-                    }
-                    &:hover {
-                        background-color: $colorMain;
-                        color: $colorWhite;
-                    }
-                }
-            }
-        }
-        &:hover {
-            h6 {
-                color: $colorBlack;
-            }
-        }
-
-    }
-}
-
-
-/* ==== testimonial part ==== */
-.testimonial {
-    padding-bottom: 75px;
-    .header{
-        margin-bottom: 50px;
-    }
-    .testimonialBox {
-        background-color: $colorWhite;
         position: relative;
-        margin-top: 65px;
-        padding: 80px 30px 20px;
-        &:hover{
-            margin-top: 58px;
+        border: 1px solid #e9e9e9;
+        img{
+            width: 100%;
+            height: auto;
         }
-        .clientImg {
-            height: 130px;
-            width: 130px;
-            border-radius: 50%;
-            overflow: hidden;
+        .viewDemo{
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            border: 10px solid $colorWhite;
-        }
-        .clientTxt {
-            text-align: center;
-            p {
-                font-size: 16px;
-                color: $colorBlack;
-            }
-        }
-        .clientIntro {
-            text-transform: capitalize;
-            padding-top: 10px;
-            h6 {
-                margin: 0;
-                color: lighten($colorBlack, 15%);
-            }
-            p {
-                margin: 0;
-                color: lighten($colorBlack, 35%);
-            }
-        }
-    }
-}
-
-
-/* ==== price part ==== */
-.price {
-    padding-bottom: 85px;
-    .header {
-        margin-bottom: 40px;
-    }
-    .priceBox {
-        padding: 0;
-        background-color: $colorWhite;
-        &:hover{
-            margin-bottom: 15px;
-        }
-        .head {
+            @include prefix(transform, translate(-50%, -50%));
+            opacity: 0;
             @include animate();
-            border-bottom: 1px solid #ddd;
-            border-radius: 5px 5px 0px 0px;
-            padding: 30px 40px;
-            h5 {
-                font-size: $fsH2;
-                color: lighten($colorBlack, 45%);
-                margin: 0;
-                &:nth-child(2) {
-                    color: lighten($colorBlack, 15%);
-                }
-            }
-        }
-        ul.body {
-            padding: 20px 40px;
-            margin: 0;
-            @include animate();
-            li {
-                margin: 0;
-                padding: 20px 0;
-                border-bottom: 1px solid #ddd;
-                p {
-                    margin: 0;
-                    font-weight: 500;
-                    color: lighten($colorBlack, 30%);
-                    &:nth-child(2) {
-                        color: lighten($colorBlack, 15%);
-                    }
-                }
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-        }
-        a.choose {
-            margin: 0 auto;
-            margin-bottom: 40px;
-            padding: 10px 30px;
-            background-color: $colorMain;
-            border-radius: 3px;
-            color: $colorWhite;
-            &:hover {
-                background-color: lighten($colorMain, 10%);
-            }
-        }
-        &.active {
-            margin-top: 15px;
-            transform: scale(1.05);
-            .head {
+            a{
+                padding: 5px 15px;
                 background-color: $colorMain;
-                h5 {
-                    color: $colorWhite;
-                }
-            }
-        }
-    }
-}
-
-
-/* ==== newsletter part ==== */
-.newsletter {
-    background-color: $colorMain;
-    background-repeat: repeat;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    &::after {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-image: url('../img/pattern.png');
-        opacity: .4;
-        z-index: -1;
-    }
-    .newsletterLeft {
-        h4 {
-            font-size: $fsH2;
-            color: $colorWhite;
-        }
-    }
-    .newsletterRight {
-        text-align: right;
-        .signup {
-            display: inline-block;
-            position: relative;
-            input[type='email'] {
-                background-color: lighten($colorWhite, 40%);
-                padding: 7px 15px;
-                min-width: 350px;
-                color: $colorMain;
-                border: 1px solid $colorWhite;
-                background-color: $colorWhite;
-                &:focus {
-                    border-color: $colorWhite;
-                    background-color: rgba($colorWhite, 0.5);
-                    color: $colorBlack;
-                }
-            }
-            button{
-                position: absolute;
-                right: 0;
-                top: 0;
-                height: 100%;
-                width: 60px;
-                background-color: $colorWhite;
-                border: 1px solid $colorWhite;
-                cursor: pointer;
-                @include animate();
-                &:hover {}
-            }
-        }
-    }
-}
-
-
-/* ==== blog part ==== */
-.blog {
-    padding-bottom: 75px;
-}
-
-
-/* ==== sub footer part ==== */
-.subFooter {
-    background-color: lighten($colorBlack, 5%);
-    padding-bottom: 90px;
-    .header {
-        margin-bottom: 40px;
-        h2 {
-            color: $colorWhite;
-        }
-    }
-    .subFooterInfo {
-        height: 150px;
-        border-radius: 5px;
-        background-color: lighten($colorBlack, 15%);
-        margin: auto;
-        .sfInfoCnt {
-            text-align: center;
-            i {
-                font-size: 40px;
-                margin-bottom: 20px;
-                color: darken($colorWhite, 20%);
-            }
-            p {
-                margin: 0;
-                font-size: 16px;
                 color: $colorWhite;
-            }
-        }
-    }
-    .contactForm {
-        margin-top: 20px;
-        .cFormLeft {            
-            height: 100%;
-            input {
-                width: 100%;
-                margin-bottom: 10px;
-                padding: 7px 20px;
                 border-radius: 3px;
-                border: 1px solid lighten($colorBlack, 15%);
-                background-color: transparent;
-                color: $colorWhite;
-                &:last-child {
-                    margin: 0;
-                }
-                &:focus {
-                    border-color: darken($colorWhite, 20%);
-                }
-            }
-            textarea {
-                height: 100px;
-                width: 100%;
-                padding: 7px 20px;
-                border-radius: 3px;
-                border: 1px solid lighten($colorBlack, 15%);
-                background-color: transparent;
-                resize: none;
-                color: $colorWhite;
-                &:focus {
-                    border-color: darken($colorWhite, 20%);
-                }
-            }
-            input.submit {
-                padding: 8px 30px;
-                border: 1px solid lighten($colorBlack, 15%);
-                margin-top: 20px;
-                border-radius: 3px;
-                text-transform: uppercase;
-                color: $colorWhite;
-                background-color: lighten($colorBlack, 15%);
-                cursor: pointer;
-                @include animate();
-                max-width: 130px;
-                &:hover {
-                    background-color: lighten($colorMain, 10%);
-                    border-color: lighten($colorMain, 10%);
-                }
-            }
-            .error {
-                margin: 8px 0px;
-                display: none;
-                color: red;
-            }            
-            #ajaxsuccess {
-                font-size: 16px;
-                width: 100%;
-                display: none;
-                clear: both;
-                margin: 8px 0px;
-            }            
-            .error_message {
-                padding: 10px;
-                text-align: center;
-                border: 2px solid #f36270;
-                color: #f36270;
-                border-radius: 5px;
-                font-size: 14px;
                 font-weight: 600;
-                background-color: #fff;
-                padding: 10px;
-                margin-bottom: 5px;
-            }         
-            #success_page {
-                text-align: center;                 
-                background-color: #fff;
-                padding: 10px;
-                margin-bottom: 5px;               
-                h3{
-                    color: #0dba26;
-                }
-                p{
-                    margin-bottom: 0;
+                border: 1px solid rgba(0, 0, 0, 0.185);
+                &:hover{
+                    color: $colorMain;
+                    background-color: $colorWhite;
                 }
             }
         }
-        .cFormRight {
-            height: 100%;
-        }
-    }
-}
-
-
-/* ==== footer part ==== */
-footer {
-    background-color: $colorBlack;
-    color: $colorWhite;
-    padding: 10px 0;
-    .footerRight{
-        text-align: right;
-        nav{
-            ul{
-                margin-bottom: 0;
-                li{
-                    display: inline-block;
-                    a{
-                        padding: 5px 10px;
-                        color: $colorWhite;
-                        &:hover{
-                            color: $colorMain;
-                        }
-                        margin: 3px 2px;
-                    }
-                }
-            }
-        }
-    }
-    ul.social{
-        li{
-            margin-left: 5px;
-            a{
-                height: 35px;
-                width: 35px;
-                line-height: 35px;
-                font-size: 18px;
-            }
-        }
-    }
-    ul>li>a {
-        i {
-            -webkit-text-stroke-color: transparent;
-            color: $colorWhite;
-        }
-    }
-}
-
-
-/* ==== preloader ==== */
-.preloader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: $colorMain;
-    z-index: 111;
-    text-align: center;
-    .loader{
-        .spin{
-            height: 20px;
-            width: 20px;
-            background-color: $colorWhite;
-            border-radius: 50%;
-            margin: 20px 7px 0;
-            &1{
-                animation: move .8s linear 0s infinite;
-            }
-            &2{
-                animation: move .8s linear 0.33s infinite ;
-            }
-            &3{
-                animation: move .8s linear 0.66s infinite;
-            }
-            @keyframes move{
-                0%, 75%, 100%{margin-top: 20px;}
-                25%{ margin-top: 0px; }
-            }
-        }
-    }
-}
-
-
-/* ==== back to top ==== */
-.backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    z-index: 111;
-    display: none;
-    i{
-        transform: rotate(90deg);
-        height: 40px;
-        width: 40px;
-        line-height: 40px;
-        border: 1px solid gray;
-        font-size: 22px;
-        border-radius: 3px;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        background-color: $colorMain;
-        border-color: $colorMain;
-        color: $colorWhite;
-        box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.2);
-        cursor: pointer;
-        @include animate();
         &:hover{
-            box-shadow: 5px 0px 20px 2px rgba(0,0,0, 0.29);
-        }
-    }
-}
-
-/* ==== blog page ==== */
-.mainHeader.normalHeader{
-    background-color: $colorMain;  
-}
-.blogPage{
-    padding-top: 150px;
-    .blogLeft{
-    }
-    .blogRight{
-        .widgetBox{
-            .recentPosts{
-                margin-bottom: 0;
-                li{
-                    border-top: 1px solid #ddd;
-                    &:last-child{
-                        border-bottom: 1px solid #ddd;
-                    }
-                    .recentPost{
-                        padding: 10px 0;
-                        .previewImg{
-                            width: 100px;
-                            margin-right: 10px;
-                            img{
-                                margin-bottom: 0;
-                            }
-                        }
-                        .content{
-                            a{
-                                font-size: $fsH6;
-                                color: lighten($colorBlack, 20%);
-                            }
-                        }
-                        &:hover{
-                            .content{
-                                a{
-                                    color: $colorMain;
-                                }
-                            }
-                        }
-                    }
-                }
+            .viewDemo{
+                opacity: 1;
             }
         }
     }
-}
-
-
-/* ==== blog post page ==== */
-/* ====  blog post part ==== */
-.blogPostBox{    
-    &:hover{
-        margin: 15px 0;
-    }
-    .header{
-        margin-bottom: 5px;
-        h1{
-            font-size: $fsH4;
-            text-transform: initial;
-            margin: 0;
-            a{
-                color: $colorBlack;
-            }
-        }
-    }
-    .meta{
-        margin-bottom: 10px;
-        p{
-            display: inline-block;
-            margin: 0;
-        }        
-        .category{
-            display: inline-block;
-            a{
-                padding: 2px 8px;
-                background-color: #f5f5f5;
-            }
-        }
-    }
-    .blogImg{
-        margin: 20px 0;
+    h4{
         text-align: center;
-    }
-    .quotes{
-        background-color: lighten($colorMain, 40%);
-        border-left: 5px solid $colorMain;
-        padding: 20px;
-        font-size: 18px;
-        font-weight: 600;
-        margin: 30px 0;
-    }
-    .blogCnt{
-        p{
-            font-size: 16px;
-            color: lighten($colorBlack, 10%);
-        }
-    }
-    .CntImgCol2{
-        margin-bottom: 20px;
-        p{
-            &:last-child{
-                margin-bottom: 0;
-            }
-        }
-    }
-    .commentAndTags{
-        .tags{
-            width: 100%;
-            p{
-                margin: 0;
-                display: inline-block;
-                font-weight: bold;
-                text-transform: uppercase;
-                i{
-                    color: lighten($colorBlack, 25%);
-                    font-size: 12px;
-                    margin-right: 5px;
-                }
-            }
-            ul{
-                display: inline-block;
-                margin-left: 10px;
-                margin-bottom: 0;
-                li{
-                    display: inline-block;
-                    a{
-                        font-size: 12px;
-                        text-transform: uppercase;
-                        background-color: #f1f1f1;
-                        padding: 2px 8px;
-                        color: $colorBlack;
-                    }
-                }
-            }
-        }
-        .comment{
-            width: 100%;
-            text-align: right;
-            a{
-                color: $colorBlack;
-            }
-        }
+        margin: 5px 0;
     }
 }
 
-/* ==== author part ==== */
-.authorBox{
-    width: 100%;
-    &:hover{
-        margin: 15px 0;
-    }
-    .authorLeft{
-        min-width: 120px;
-        max-width: 120px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 20px;
-    }
-    .authorRight{
-        width: 100%;
-        height: 100%;
-        h5{
-            margin-bottom: 20px;
-        }
-        p{
-            margin-bottom: 0;
-        }
-    }
-}
-
-/* ==== comment form part ==== */
-.commentForm{
-    &:hover{
-        margin: 15px 0;
-    }
-    h4{
-        margin-bottom: 20px;
-    }
-    input,textarea{
-        width: 100%;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        padding: 5px 15px;
-        border-radius: 3px;
-        &:focus{
-            border-color: $colorMain;
-        }
-    }
-    textarea{
-        height: 120px;
-        resize: none; 
-        margin-bottom: 0;
-    }   
-    .commentButton{
-        padding: 7px 15px;
-        background-color: $colorMain;
-        color: $colorWhite;
-        border-radius: 2px;
-        margin-top: 10px;
+/* ==== footer start ==== */
+footer{
+    background-color: lighten($colorBlack, 15%);
+    padding: 15px 0;
+    p{
+        color: #fff;
+        margin: 0;
     }
 }
 
 
-/* ==== CSScomment ==== */
-.commentBox {
-    margin: 20px 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #fafafa;
-    h4{
-        margin-bottom: 20px;
-    }
-    ul.commentList{
-        li{
-            border-bottom: 1px solid #ddd;
-            &:last-child{
-                border-bottom: 0;
-            }
-        }
-    }
-    .mainComment, .subComment{
-        margin-right: 10px;
-        padding: 20px 0;
-        .user{
-            min-width: 60px;
-            max-width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 10px;
-        }
-        .content{
-            width: 100%;
-            .head{
-                margin-bottom: 10px;
-                h6,p{
-                    margin: 0;
-                }
-            }
-            p{
-                color: lighten($colorBlack, 25%);
-                margin-bottom: 0;
-            }
-            .meta{
-                margin-top: 5px;
-                a{
-                    color: $colorBlack;
-                    &:hover{
-                        color: $colorMain;
-                    }
-                }
-            }
-        }
-    }
-    ul.subCommentList {        
-        margin-left: 80px;
-        li{
-            border-top: 1px solid #ddd;
-            border-bottom: 0;
-        }
-    }
-    .subComment{
-        padding: 10px 0;
-        margin-left: 0;
-    }
-}
 /* ==== Responsive CSS ==== */
 @import 'responsive.scss';
+
+
+/* ==== CSS comment start ==== */
+
+/* ==== CSS comment ends ==== */
