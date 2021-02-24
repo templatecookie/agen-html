@@ -13,7 +13,7 @@
 	<meta name="author" content="Zakir Hossen">
 
 	<!-- ==== Website Title ==== -->
-	<title> Home | WDZ Bootstrap 4 Business Template </title>
+	<title>Home | WDZ Bootstrap 4 Business Template </title>
 
 	<!-- ==== Favicon ==== -->
 	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -26,12 +26,12 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar-nav" data-offset="50">
 	<!-- ==== header part start ==== -->
 	<header class="mainHeader">
 		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-dark">
-				<a class="navbar-brand" href="index.html">
+			<nav class="navbar navbar-expand-lg navbar-dark ">
+				<a class="navbar-brand" href="index3.html">
 					<div class="logo">
 						<img src="img/logo.png" alt="Logo" class="img-fluid">
 					</div>
@@ -43,7 +43,7 @@
 				<div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
 					<ul class="navbar-nav hasLink">
 						<li class="nav-item">
-							<a class="nav-link" href="#home">Home</a>
+							<a class="nav-link active" href="#home">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#about">about</a>
@@ -79,6 +79,7 @@
 		<div class="banner">
 			<div class="bnr slide1">
 				<div class="bnrInside">
+					<div id="particles-js"></div>
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8 col-md-12 col-sm-12 col-12 d-flex flex-wrap align-items-center bnrInsideBox">
@@ -116,7 +117,7 @@
 						<div>Lorem ipsum, dolor sit amet consec tetur <strong>laborum voluptatum </strong>  adipi sicing elit. Deleniti tenetur illum veniam cumque ea aliquid <span class="color">ad molestias</span>  voluptates nihil impedit! Asper natur est dicta obcaecati laborum voluptatum voluptates!</div>
 						<div class="buttons hasLink">
 							<a href="#service">Our Services</a>
-							<a href="">Read More</a>
+							<a href="#">Read More</a>
 						</div>
 					</div>
 				</div>
@@ -708,7 +709,7 @@
 				<div class="col-lg-6">
 					<div class="cFormLeft">	
 						<div id="message"></div>					
-						<form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+						<form method="post" action="#" name="contact-form" id="contact-form">
 							<input name="name" id="name" type="text" placeholder="Name">
 							<input name="email" id="email" type="email" placeholder="Email">
 							<input name="subject" id="subject" type="text" placeholder="Subject">
@@ -785,6 +786,10 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 	<script src="js/maplace.min.js"></script>
 	<script src="js/map-config.js"></script>
+	<!-- ==== particles js ==== -->	
+	<script src="js/particles.min.js"></script>
+	<script src="js/particles-config.js"></script>
+
 	<script src="js/main.js"></script>
 </body>
 </html>
