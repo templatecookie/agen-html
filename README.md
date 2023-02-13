@@ -1,5 +1,5 @@
-# [Echotemplate.com](https://echotemplate.com)
-FREE UI & HTML Templates for Designer and Developer. Echotemplate is a place where a team of design & developers create beautiful templates.
+# [lomeyolabs.com](https://lomeyolabs.com)
+FREE UI & HTML Templates for Designer and Developer. Lomeyo Labs is a place where a team of design & developers create beautiful templates.
 
 # [Agen Business Templates](https://www.echotemplate.com/templates/wdz-one-page-business-html-template)
 
