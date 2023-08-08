@@ -1,9 +1,9 @@
-# [lomeyolabs.com](https://lomeyolabs.com)
-FREE UI & HTML Templates for Designer and Developer. Lomeyo Labs is a place where a team of design & developers create beautiful templates.
+# [templatecookie.com](https://templatecookie.com)
+FREE UI & HTML Templates for Designer and Developer. Lomeyo Labs is a place where a team of designers & developers create beautiful templates.
 
 # [Agen Business Templates](https://www.echotemplate.com/templates/wdz-one-page-business-html-template)
 
-> One-page Business html template based on bootstrap framework
+> One-page Business HTML template based on Bootstrap framework
 
 This project is a bootstrap version [Agen Business Templates](https://www.echotemplate.com/templates/wdz-one-page-business-html-template) designed with HTML & CSS.
 
