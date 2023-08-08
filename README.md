@@ -5,9 +5,9 @@ FREE UI & HTML Templates for Designer and Developer. Lomeyo Labs is a place wher
 
 > One-page Business HTML template based on Bootstrap framework
 
-This project is a bootstrap version [Agen Business Templates](https://www.echotemplate.com/templates/wdz-one-page-business-html-template) designed with HTML & CSS.
+This project is a bootstrap version [Agen Business Templates](https://agen-one-page.netlify.app/) designed with HTML & CSS.
 
-Check the [Live Demo here](https://demo.echotemplate.com/agen-one-page-business-html-template/).
+Check the [Live Demo here](https://agen-one-page.netlify.app/).
 
 ![](img/screenshot.png)
 
