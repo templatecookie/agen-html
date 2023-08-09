@@ -17,7 +17,7 @@ Check the [Live Demo here](https://agen-one-page.netlify.app/).
 ## Framework & Technologies
 - bootstrap4
 - jQuery
-- swiper
+- slick
 
 ## Credits
 - Design & Developed by [Templatecookie](https://templatecookie.com)
