@@ -1,18 +1,43 @@
-# [templatecookie.com](https://templatecookie.com)
-FREE UI & HTML Templates for Designer and Developer. Lomeyo Labs is a place where a team of designers & developers create beautiful templates.
+# [Templatecookie](https://templatecookie.com)
+Templatecookie.com creates quality templates and php scripts. Templatecookie has many free HTML & Figma templates available for professional use. Templatecookie is famous for its premium PHP Scripts available on [Codeanyon Marketplace](https://codecanyon.net/user/templatecookie). Browse [Templatecookie](https://templatecookie.com) today and discover awesome digital products.
 
-# [Agen Business Templates](https://agen-one-page.netlify.app/)
+# [Adriver - Classified Adlisting HTML Template](https://www.templatecookie.com/products)
 
-> One-page Business HTML template based on Bootstrap framework
+> Adriver - classified adlisting HTML template with 8+ landing pages for different professions.
 
-This project is a bootstrap version [Agen Business Templates](https://agen-one-page.netlify.app/) designed with HTML & CSS.
+Check the [Live Demo here](https://adriver-vue-project.netlify.app/).
 
-Check the [Live Demo here](https://agen-one-page.netlify.app/).
+![](screenshot.png)
 
-![](img/screenshot.png)
+## Pages List
+- Home (Landing Page)
+- Browse Listing
+- Listing Detail
+- Seller Dashboard
+- User Dashboard
+- About
+- Contact
+- Pricing Plan
+- Blog List
+- Blog Details
+- Privacy Policy
+- Terms & Conditions
+- Coming Soon
+- 404
+- 500
+- and many more
+
+
+## Framework & Technologies
+- tailwind
+- scss
+- vue3
+- swiper
 
 ## Credits
-- Design & coded by [Zakir Hossen](https://github.com/devzakir)
+- Design & Developed by [Templatecookie](https://templatecookie.com)
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
